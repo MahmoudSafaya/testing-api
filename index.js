@@ -7,7 +7,7 @@ const fs = require('fs');
 const cors = require('cors');
 app.use(cors()); // Prevents CORS error
 
-app.get('/api', function(req, res) {
+app.get('/', function(req, res) {
 
     if (req.url === '/favicon.ico') {
         res.end();
@@ -33,6 +33,6 @@ app.get('/api', function(req, res) {
 
 })
 
-app.listen(3002, () => {
-    console.log("Server running on port 3002");
+app.listen(process.env.PORT || 5000, () => {
+    console.log("Server running on port 5000");
 })
